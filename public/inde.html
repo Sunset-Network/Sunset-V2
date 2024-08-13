@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="/MAIN.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./logo.png" type="image/png">
+  <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+  <meta name="title" content="Sunset Network" />
+  <meta name="theme-color" content="#fff500">
+  <meta name="description" content="i dont really know what to put here so ig uhh sunet network cool - nobodycares" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="twitter:image" content="https://github.com/Sunset-Network/Sunset-Network/blob/main/public/Icons/logo.png?raw=true">
+  <script src="https://kit.fontawesome.com/52676eb1e5.js" crossorigin="anonymous"></script>
+   <!-- Google tag (gtag.js) -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWD8SS29YZ"></script>
+   <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag() { dataLayer.push(arguments); }
+       gtag('js', new Date());
+
+       gtag('config', 'G-PWD8SS29YZ');
+   </script>
+   
+  <title>Sunset Network</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #0f1219;
+      position: relative;
+      font-weight: 550;
+      overflow: none;
+    }
+
+    #tabs {
+      background: #1e232f;
+      padding: 7px;
+      position: fixed;
+      top: 50px;
+      width: 100%;
+      z-index: 999;
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: none;
+      box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .tab-button {
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: #2e3953;
+      border: none;
+      padding: 7px 30px 7px 10px;
+      cursor: pointer;
+      margin-left: 10px;
+      transition: background-color 0.3s ease;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .tab-button:hover {
+      background-color: #3c4458;
+      border-bottom: solid 4px #d6af00;
+      position: relative;
+      top: -3px;
+    }
+
+    .add-tab-button {
+      padding: 7px 20px;
+      margin-left: 10px;
+      margin-right: 17px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border-radius: 3px;
+      flex-shrink: 0;
+      background: #2e3953;
+      color: rgb(255, 255, 255);
+    }
+
+    .add-tab-button:hover {
+      background-color: #3c4458;
+    }
+
+    .close {
+      position: absolute;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      right: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 3px;
+      padding-left: 5px;
+      padding-right: 5px;
+      border-radius: 50%;
+      transition: background-color 0.3s ease;
+      z-index: 1;
+      color: #ffffff;
+    }
+
+    .close:hover {
+      background-color: rgba(204, 204, 204, 0.37);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.212);
+    }
+
+    .selected {
+      border-bottom: solid 4px #00ffff9c;
+      position: relative;
+      top: -3px;
+    }
+
+    iframe {
+      width: 100%;
+      height: calc(100vh - 100px);
+      border: none;
+      position: absolute;
+      top: 100px;
+      left: 0;
+    }
+
+    @media screen and (max-width: 600px) {
+      #tabs {
+        flex-wrap: wrap;
+      }
+
+      .tab-button {
+        padding: 10px 15px;
+        margin: 5px;
+        margin-bottom: 0px;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      margin-top: 50px;
+      height: 7px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f100;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 100px;
+      background: #2d3444;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #384258;
+    }
+
+    .favicon {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+
+    .tab-name {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      max-width: calc(100% - 5px);
+      color: rgb(255, 255, 255);
+    }
+
+    .search-bar {
+      background: #1e232f;
+      padding: 10px;
+      width: 100%;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      position: fixed;
+      top: 0;
+    }
+
+    .search-form {
+      display: flex;
+      align-items: center;
+    }
+
+    .search-input {
+      width: 300px;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-right: 10px;
+      font-size: 16px;
+      color: black;
+    }
+
+    .search-input::placeholder {
+      color: black;
+    }
+
+    .actnbtn {
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: #2e3953;
+      border: none;
+      padding: 17px 15px 17px 15px;
+      cursor: pointer;
+      margin-right: 7px;
+      margin-left: 7px;
+      transition: background-color 0.3s ease;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    #fullscreen {
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: #2e3953;
+      border: none;
+      padding: 17px 15px 17px 15px;
+      cursor: pointer;
+      margin-right: 7px;
+      margin-left: 7px;
+      transition: background-color 0.3s ease;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .search-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-container i {
+      position: absolute;
+      left: 10px;
+      color: black;
+    }
+
+    .search-input {
+      width: 400px;
+      padding: 8px 8px 8px 30px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      color: black;
+    }
+
+    .search-input::placeholder {
+      color: black;
+    }
+
+    #uv-address {
+      background: #2e3953;
+      border: rgba(255, 255, 255, 0.1) solid 2px;
+    }
+
+    #enterbtn {
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: #2e3953;
+      color: #ffffff;
+      border: none;
+      padding: 8px 9px 8px 9px;
+      font-weight: 600;
+      font-size: large;
+      cursor: pointer;
+      margin-right: 7px;
+      margin-left: 7px;
+      transition: background-color 0.3s ease;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .left-icons,
+    .right-icons {
+      display: flex;
+      align-items: center;
+    }
+
+    .left-icons {
+      flex: 1;
+    }
+
+    .right-icons {
+      flex: 1;
+      justify-content: flex-end;
+      margin-right: 20px;
+    }
+
+    .favorite-item {
+      background: #2e3953;
+      border: none;
+      padding: 7px 30px 7px 10px;
+      cursor: pointer;
+      margin-left: 10px;
+      transition: background-color 0.3s ease;
+      border-radius: 3px;
+      flex-shrink: 0;
+      color: #ffffff;
+    }
+
+    .favorite-item:hover {
+      background-color: #3c4458;
+    }
+
+    #favorite-btn {
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: #2e3953;
+      border: none;
+      padding: 17px 15px 17px 15px;
+      cursor: pointer;
+      margin-right: 7px;
+      margin-left: 7px;
+      transition: background-color 0.3s ease;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    #popout-btn {
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: #2e3953;
+      border: none;
+      padding: 17px 15px 17px 15px;
+      cursor: pointer;
+      margin-right: 7px;
+      margin-left: 7px;
+      transition: background-color 0.3s ease;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    #refresh-btn {
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: #2e3953;
+      border: none;
+      padding: 17px 15px 17px 15px;
+      cursor: pointer;
+      margin-right: 7px;
+      margin-left: 7px;
+      transition: background-color 0.3s ease;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    #question-btn {
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: #2e3953;
+      border: none;
+      padding: 17px 15px 17px 15px;
+      cursor: pointer;
+      margin-right: 7px;
+      margin-left: 7px;
+      transition: background-color 0.3s ease;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .status-bar {
+      color: #ffffff;
+      font-size: 14px;
+      background: rgba(30, 35, 47, 0.9);
+      padding: 5px 10px;
+      width: fit-content;
+      border-radius: 5px;
+      margin-bottom: 7px;
+    }
+
+    #favorites-bar {
+      background: #1e232f;
+      padding: 10px;
+      box-shadow: 0px -7px 5px rgba(0, 0, 0, 0.5);
+      width: 100vw;
+      padding-bottom: 15px;
+    }
+
+    .container {
+      position: fixed;
+      bottom: -7px;
+      display: flex;
+      flex-direction: column;
+      z-index: 1000;
+    }
+
+    #side-widget {
+      position: fixed;
+      text-align: center;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%) translateX(100%);
+      border-radius: 5px;
+      background-color: #2e3953;
+      width: 15%;
+      height: 57vh;
+      z-index: 1000;
+      overflow-y: auto;
+      padding: 20px;
+      transition: transform 0.5s ease;
+    }
+
+    #side-widget.visible {
+      transform: translateY(-50%) translateX(10px);
+    }
+
+    #side-widget-content {
+      color: #fff;
+    }
+
+    #widjet {
+      margin-bottom: 7px;
+      padding: 7px;
+    }
+
+    #txtstfs {
+      margin-left: 20px;
+      font-size: x-large;
+    }
+
+    [data-theme='pp'] {
+    .selected {
+      border-bottom: solid 4px #de51f6;
+      position: relative;
+      top: -3px;
+    }
+}
+
+[data-theme='blue'] {
+    .selected {
+      border-bottom: solid 4px #1163cd;
+      position: relative;
+      top: -3px;
+    }
+
+    .tab-button {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: #114b82;
+    border: none;
+    padding: 7px 30px 7px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  .tab-button:hover {
+    background-color: #0566a9;
+    border-bottom: solid 4px #0e68d1;
+    position: relative;
+    top: -3px;
+  }
+
+  .add-tab-button {
+    padding: 7px 20px;
+    margin-left: 10px;
+    margin-right: 17px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 3px;
+    flex-shrink: 0;
+    background: #114b82;
+    color: rgb(255, 255, 255);
+  }
+
+  .add-tab-button:hover {
+    background-color: #0566a9;
+  }
+
+  .close {
+    position: absolute;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    z-index: 1;
+    color: #ffffff;
+  }
+
+  .close:hover {
+    background-color: rgba(54, 35, 86, 0.37);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.212);
+  }
+
+  iframe {
+    width: 100%;
+    height: calc(100vh - 100px);
+    border: none;
+    position: absolute;
+    top: 100px;
+    left: 0;
+  }
+
+  @media screen and (max-width: 600px) {
+    #tabs {
+      flex-wrap: wrap;
+    }
+
+    .tab-button {
+      padding: 10px 15px;
+      margin: 5px;
+      margin-bottom: 0px;
+    }
+  }
+  .search-bar {
+    background: #0b497f;
+    padding: 10px;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+  }
+
+  .search-form {
+    display: flex;
+    align-items: center;
+  }
+
+  .search-input {
+    width: 300px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    font-size: 16px;
+    color: white;
+  }
+
+  .search-input::placeholder {
+    color: white;
+  }
+
+  .actnbtn {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: #114b82;
+    border: none;
+    padding: 17px 15px 17px 15px;
+    cursor: pointer;
+    margin-right: 7px;
+    margin-left: 7px;
+    transition: background-color 0.3s ease;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  #fullscreen {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: #114b82;
+    border: none;
+    padding: 17px 15px 17px 15px;
+    cursor: pointer;
+    margin-right: 7px;
+    margin-left: 7px;
+    transition: background-color 0.3s ease;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  .search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .search-container i {
+    position: absolute;
+    left: 10px;
+    color: white;
+  }
+
+  .search-input {
+    width: 400px;
+    padding: 8px 8px 8px 30px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    color: white;
+  }
+
+  .search-input::placeholder {
+    color: white;
+  }
+
+  #uv-address {
+    background: #114b82;
+    border: rgba(255, 255, 255, 0.1) solid 2px;
+  }
+
+  #enterbtn {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: #114b82;
+    color: #ffffff;
+    border: none;
+    padding: 8px 9px 8px 9px;
+    font-weight: 600;
+    font-size: large;
+    cursor: pointer;
+    margin-right: 7px;
+    margin-left: 7px;
+    transition: background-color 0.3s ease;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  .left-icons,
+  .right-icons {
+    display: flex;
+    align-items: center;
+  }
+
+  .left-icons {
+    flex: 1;
+  }
+
+  .right-icons {
+    flex: 1;
+    justify-content: flex-end;
+    margin-right: 20px;
+  }
+
+  .favorite-item {
+    background: #114b82;
+    border: none;
+    padding: 7px 30px 7px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+    border-radius: 3px;
+    flex-shrink: 0;
+    color: #ffffff;
+  }
+
+  .favorite-item:hover {
+    background-color: #114b82;
+  }
+
+  #favorite-btn {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: #114b82;
+    border: none;
+    padding: 17px 15px 17px 15px;
+    cursor: pointer;
+    margin-right: 7px;
+    margin-left: 7px;
+    transition: background-color 0.3s ease;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  #popout-btn {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: #114b82;
+    border: none;
+    padding: 17px 15px 17px 15px;
+    cursor: pointer;
+    margin-right: 7px;
+    margin-left: 7px;
+    transition: background-color 0.3s ease;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  #refresh-btn {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: #114b82;
+    border: none;
+    padding: 17px 15px 17px 15px;
+    cursor: pointer;
+    margin-right: 7px;
+    margin-left: 7px;
+    transition: background-color 0.3s ease;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  #question-btn {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: #114b82;
+    border: none;
+    padding: 17px 15px 17px 15px;
+    cursor: pointer;
+    margin-right: 7px;
+    margin-left: 7px;
+    transition: background-color 0.3s ease;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  .status-bar {
+    color: #ffffff;
+    font-size: 14px;
+    background: rgba(3, 71, 125, 0.9);
+    padding: 5px 10px;
+    width: fit-content;
+    border-radius: 5px;
+    margin-bottom: 7px;
+  }
+
+  #side-widget {
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%) translateX(100%);
+    border-radius: 5px;
+    background-color: #0b497f;
+    width: 15%;
+    height: 57vh;
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 20px;
+    transition: transform 0.5s ease;
+  }
+
+  #tabs {
+    background: #0b497f;
+    padding: 7px;
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: none;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+
+  <div class="search-bar">
+    <div class="left-icons">
+      <i id="home" onclick="home()" class="fa-solid fa-house fa-xl actnbtn" style="color: #ffffff; animation: fadeIn 1s;"></i>
+      <i id="undo" onclick="history.back()" class="fa-solid fa-arrow-left fa-xl actnbtn" style="color: #ffffff; animation: fadeIn 1s;"></i>
+      <i id="refresh-btn" class="fa-solid fa-rotate-right fa-xl" style="color: #ffffff; animation: fadeIn 1s;"></i>
+      <i id="redo" onclick="history.forward()" class="fa-solid fa-arrow-right fa-xl actnbtn" style="color: #ffffff; animation: fadeIn 1s;"></i>
+    </div>
+    <form class="search-form" id="uv-form">
+      <div class="search-container">
+        <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+        <input id="uv-search-engine" value="" type="hidden" />
+        <input id="uv-address" type="text" style="color: #ffffff;" placeholder="Enter a URL or Search"
+          class="search-input" />
+      </div>
+      <button id="enterbtn" type="submit">Go</button>
+    </form>
+
+    <div class="right-icons">
+      <i id="favorite-btn" class="fa-regular fa-star fa-xl" style="color: #ffffff; animation: fadeIn 1s;"></i>
+      <i id="popout-btn" class="fa-solid fa-arrow-up-right-from-square fa-xl" style="color: #ffffff; animation: fadeIn 1s;"></i>
+      <i id="fullscreen" class="fa-solid fa-expand fa-xl" style="color: #ffffff; animation: fadeIn 1s;"></i>
+      <i id="actnbtn"  onclick="eruda.init();" class="fa-solid fa-code fa-xl actnbtn" style="color: #ffffff; animation: fadeIn 1s;"></i>
+      <i id="question-btn" class="fa-solid fa-question fa-xl" style="color: #ffffff; cursor: pointer; animation: fadeIn 1s;"></i>
+
+    </div>
+  </div>
+
+  <div id="side-widget">
+    <div id="side-widget-content">
+      <h2 id="txtstfs">Button Functionalities</h2>
+      <ul>
+        <i id="widjet" class="fa-solid fa-house fa-xl" style="color: #ffffff;"></i><br>
+        <li>Takes you back to home page.</li><br>
+        <i id="widjet" class="fa-solid fa-arrow-left fa-xl" style="color: #ffffff;"></i><br>
+        <li>Goes back to previous page.</li><br>
+        <i id="widjet" class="fa-solid fa-rotate-right fa-xl" style="color: #ffffff;"></i><br>
+        <li>Refreshes the page.</li><br>
+        <i id="widjet" class="fa-solid fa-arrow-right fa-xl" style="color: #ffffff;"></i><br>
+        <li>Goes forward if in a previous page.</li><br>
+        <i id="widjet" class="fa-regular fa-star fa-xl" style="color: #ffffff;"></i><br>
+        <li>Favorite tabs. Shift + Right-Click to unfavorite.</li><br>
+        <i id="widjet" class="fa-solid fa-arrow-up-right-from-square fa-xl" style="color: #ffffff;"></i><br>
+        <li>Pops selected tab out into a new external tab.</li><br>
+        <i id="widjet" class="fa-solid fa-expand fa-xl" style="color: #ffffff;"></i><br>
+        <li>Full-Screens page.</li><br>
+        <i id="widjet" class="fa-solid fa-code fa-xl" style="color: #ffffff;"></i><br>
+        <li>Open inspect element.</li><br>
+      </ul>
+
+    </div>
+  </div>
+  
+  <div id = "customContextMenu" style = "display: none;">
+    <ul class = "menuItems">
+    <li class = "items"><a onclick="eruda.init();">Inspect Element</a></li>
+    </ul>
+    </div>
+
+  <div id="tabs">
+    <button id="plus" class="tab-button add-tab-button">+</button>
+  </div>
+
+  <iframe id="uv-frame"></iframe>
+
+  <div class="container">
+    <div class="status-bar">
+      <span id="datetime"></span>
+      <span id="battery"></span>
+    </div>
+  </div>
+  <script src="/uv/uv.bundle.js" defer></script>
+  <script src="/uv/uv.config.js" defer></script>
+  <script src="./js/index.js" defer></script>
+
+  <script>
+    addEventListener("DOMContentLoaded", (event) => {
+        const tabs = localStorage.getItem('tabs')
+        if (tabs === 'off') {
+            top.location.replace('/main.html')
+            console.log(`redirecting`)
+        }
+        else {
+            console.log(`owo tabs on`)
+        }
+    });
+  </script>
+  <script>
+    function home() {
+        createTab()
+    }
+  </script>
+  <script>
+    const tabs = document.getElementById("tabs");
+    const plus = document.getElementById("plus");
+    const mainIframe = document.getElementById("uv-frame");
+    const favoriteBtn = document.getElementById("favorite-btn");
+    const favoritesBar = document.getElementById("favorites-bar");
+    let activeTab;
+    let activeIframe = mainIframe;
+    const contentw = activeIframe.contentWindow
+    let tabidnum = 0
+
+  localStorage.setItem('onTabs', 'true')
+    function createTab(url = "/main.html", name = "Sunset Network", faviconUrl = "logo.png") {
+      const tab = document.createElement("button");
+      tab.classList.add("tab-button");
+      tabidnum ++
+      let tabid = "tab-" + tabidnum
+      tab.id = tabid
+      localStorage.removeItem(tabid);
+
+      const faviconImg = document.createElement("img");
+      faviconImg.classList.add("favicon");
+      faviconImg.src = faviconUrl;
+      tab.appendChild(faviconImg);
+
+      const tabNameSpan = document.createElement("span");
+      tabNameSpan.id = "name"
+      tabNameSpan.classList.add("tab-name");
+      tabNameSpan.textContent = name;
+      tab.appendChild(tabNameSpan);
+
+      const closeBtn = document.createElement("span");
+      closeBtn.textContent = "X";
+      closeBtn.classList.add("close");
+      tab.appendChild(closeBtn);
+
+      tabs.insertBefore(tab, plus);
+      tab.addEventListener("click", function () {
+        if(localStorage.getItem(tab.id) != null)
+          url = localStorage.getItem(tab.id)
+        activateTab(tab, url);
+      });
+
+      closeBtn.addEventListener("click", function (event) {
+        event.stopPropagation();
+        const tabToClose = event.target.parentNode;
+        const previousTab = tabToClose.previousElementSibling || tabToClose.nextElementSibling;
+        tabToClose.remove();
+        if (tabToClose.classList.contains("selected")) {
+          if (previousTab) {
+            activateTab(previousTab, previousTab.url);
+          } else if (tabs.children.length > 0) {
+            activateTab(tabs.children[0], tabs.children[0].url);
+          } else {
+            activeIframe.src = "";
+            activeTab = null;
+          }
+        }
+      });
+
+      activateTab(tab, url);
+    }
+
+    function activateTab(tab, url) {
+      if (activeTab) {
+        activeTab.classList.remove("selected");
+      }
+      activeTab = tab;
+      activeTab.classList.add("selected");
+      activeIframe.src = url;
+      activeTab.url = url;
+    }
+
+    plus.addEventListener("click", () => createTab());
+
+    function loadFavorites() {
+      const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+      favorites.forEach(favorite => {
+        addFavorite(favorite.url, favorite.name, favorite.faviconUrl);
+      });
+    }
+
+    function saveFavorites(favorites) {
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+    }
+
+    function addFavorite(url, name, faviconUrl) {
+      const existingFavorite = Array.from(favoritesBar.children).find(child => {
+        return child.textContent === name && child.getAttribute('data-url') === url;
+      });
+
+      if (!existingFavorite) {
+        const favoriteItem = document.createElement("button");
+        favoriteItem.classList.add("favorite-item");
+        favoriteItem.textContent = name;
+        favoriteItem.setAttribute('data-url', url);
+        favoriteItem.addEventListener("click", () => {
+          createTab(url, name, faviconUrl);
+        });
+
+        favoriteItem.addEventListener("contextmenu", (event) => {
+          event.preventDefault();
+          deleteFavorite(favoriteItem, url, name, faviconUrl);
+        });
+
+        favoritesBar.appendChild(favoriteItem);
+
+        const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        favorites.push({ url, name, faviconUrl });
+        saveFavorites(favorites);
+      }
+    }
+
+    function deleteFavorite(favoriteItem, url, name, faviconUrl) {
+      favoriteItem.remove();
+
+      const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+      const updatedFavorites = favorites.filter(favorite => {
+        return !(favorite.url === url && favorite.name === name && favorite.faviconUrl === faviconUrl);
+      });
+      saveFavorites(updatedFavorites);
+    }
+
+    favoriteBtn.addEventListener("click", () => {
+      if (activeTab) {
+        const url = contentw.location.href;
+        const name = activeTab.querySelector(".tab-name").textContent;
+        const faviconUrl = activeTab.querySelector(".favicon").src;
+        addFavorite(url, name, faviconUrl);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", loadFavorites);
+
+    const tabsContainer = document.getElementById("tabs");
+    tabsContainer.addEventListener("wheel", function (event) {
+      event.preventDefault();
+      tabsContainer.scrollLeft += event.deltaY;
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const datetimeSpan = document.getElementById("datetime");
+      const batterySpan = document.getElementById("battery");
+
+      function updateDateTime() {
+        const now = new Date();
+        const options = {
+          weekday: 'short',
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit'
+        };
+        datetimeSpan.textContent = now.toLocaleDateString('en-US', options);
+      }
+
+      function updateBatteryStatus(battery) {
+        batterySpan.textContent = `Battery: ${Math.round(battery.level * 100)}%`;
+        battery.addEventListener('levelchange', () => {
+          batterySpan.textContent = `Battery: ${Math.round(battery.level * 100)}%`;
+        });
+      }
+
+      setInterval(updateDateTime, 1000);
+      updateDateTime();
+
+      if (navigator.getBattery) {
+        navigator.getBattery().then(updateBatteryStatus);
+      } else {
+        batterySpan.textContent = "Battery status not available";
+      }
+    });
+
+    const fullscreenBtn = document.getElementById("fullscreen");
+
+    function fullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().then(() => {
+          fullscreenBtn.classList.remove("fa-expand");
+          fullscreenBtn.classList.add("fa-compress");
+        }).catch((err) => {
+          console.log(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+        });
+      } else {
+        document.exitFullscreen().then(() => {
+          fullscreenBtn.classList.remove("fa-compress");
+          fullscreenBtn.classList.add("fa-expand");
+        }).catch((err) => {
+          console.log(`Error attempting to exit full-screen mode: ${err.message} (${err.name})`);
+        });
+      }
+    }
+    fullscreenBtn.addEventListener("click", fullscreen);
+
+    createTab();
+
+    const popoutBtn = document.getElementById("popout-btn");
+    popoutBtn.addEventListener("click", function () {
+      var url = contentw.location.href
+      var win = window.open();
+      win.document.body.style.margin = '0';
+      win.document.body.style.height = '100vh';
+      var aiframe = win.document.createElement('iframe');
+      aiframe.style.border = 'none';
+      aiframe.style.width = '100%';
+      aiframe.style.height = '100%';
+      aiframe.style.margin = '0';
+      aiframe.src = url;
+      win.document.body.appendChild(aiframe);
+    });
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const questionBtn = document.getElementById("question-btn");
+      const sideWidget = document.getElementById("side-widget");
+      questionBtn.addEventListener("click", function () {
+        sideWidget.classList.toggle("visible");
+      });
+    });
+    const refreshBtn = document.getElementById("refresh-btn");
+    refreshBtn.addEventListener("click", function () {
+      if (activeIframe) {
+        contentw.location.href = contentw.location.href;
+      }
+    });
+
+    function uvstuff(){
+      let url = search(document.getElementById("uv-address").value)
+      let encodedUrl = swConfigSettings.prefix + crypts.encode(url);
+      contentw.location.href = encodedUrl;
+    };
+    document.getElementById("uv-address").addEventListener("input", function () {
+      contentw.postMessage("value" + document.getElementById("uv-address").value, '*');
+    });
+    document.getElementById("uv-form").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      uvstuff()
+    });
+    document.getElementById("enterbtn").addEventListener("click", function () {
+      uvstuff()
+    });
+    document.getElementById("home").addEventListener("click", function () {
+      contentw.location.href = "/index.html"
+    })
+
+    activeIframe.addEventListener("load", function () {
+      let url = contentw.location.href;
+      let path = contentw.location.pathname;
+      if(path.includes("/uv/service/")){
+        path = path.substring(12);
+        document.getElementById("uv-address").value = __uv$config.decodeUrl(path);
+      }
+      else if(path.includes("/index.html")){
+        document.getElementById("uv-address").value = ""
+      };
+
+      if(contentw.document.querySelector('link[rel*="icon"]')){
+        activeTab.querySelector(".favicon").src = contentw.document.querySelector('link[rel*="icon"]').href
+      }
+      else{
+        activeTab.querySelector(".favicon").src = "default-favicon.png"
+      }
+      activeTab.querySelector(".tab-name").textContent = contentw.document.title;
+      localStorage.setItem(activeTab.id, url);
+    })
+  </script>
+  <script src="./js/load.js"></script>
+</body>
+
+</html>

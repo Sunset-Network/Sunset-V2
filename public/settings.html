@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <script src="./assets/js/themes.js"></script>
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWD8SS29YZ"></script>
+ <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag() { dataLayer.push(arguments); }
+     gtag('js', new Date());
+
+     gtag('config', 'G-PWD8SS29YZ');
+ </script>
+</head>
+<style>
+    *{
+        transition: all 0.5s;
+    }
+
+    .material-symbols-outlined {
+        display: none;
+    }
+
+    .Settings-layout {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .Settings-Card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 400px;
+        height: fit-content;
+        padding: 25px;
+        margin: 10px;
+        border-radius: 7px;
+        background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.01));
+        backdrop-filter: blur(15px);
+        box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+        box-shadow: inset 0 0 100px var(--Hover-Primary-Color);
+        border: 1px solid var(--Hover-Primary-Color);
+        color: white;
+        box-shadow: var(--box360);
+        transition: 0.5s;
+    }
+
+    #Settingstxt {
+        margin-top: 15px;
+        color: var(--Text-Main-Color);
+        font-size: xx-large;
+    }
+
+    .Settings-Card:hover {
+        border: 1px solid var(--Hover-Secondary-Color);
+        transition: 0.5s ease;
+    }
+
+    .clrholder {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 20px;
+        border-radius: 100px;
+        text-align: center;
+    }
+
+    .clrs-select {
+        background-color: transparent;
+        border: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        height: 30px;
+    }
+
+    .clrs-select::-webkit-color-swatch {
+        border-radius: 15px;
+        border: none;
+    }
+
+    .clrs-select ::-webkit-color-swatch-wrapper {
+        padding: 0;
+        border-radius: 0;
+    }
+
+
+    .clrbtn {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 5px 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.01));
+    border: 1px solid var(--Hover-Primary-Color);
+    border-radius: 7px;
+    color: var(--Text-Main-Color);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.5s ease;
+    box-shadow: inset 0 0 100px var(--Hover-Primary-Color), var(--box360);
+    backdrop-filter: blur(15px);
+    position: relative;
+    }
+
+    .clrbtn:hover {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 5px 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.01));
+    border: 1px solid var(--Hover-Secondary-Color);
+    border-radius: 7px;
+    color: var(--Text-Main-Color);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.5s ease;
+    box-shadow: inset 0 0 100px var(--Hover-Secondary-Color), var(--box360);
+    backdrop-filter: blur(15px);
+    position: relative;
+    }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+        margin-bottom: 10px;
+    }
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        border-radius: 34px;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        border-radius: 50%;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input:checked+.slider {
+        background-color: var(--Primary-Color);
+    }
+
+    input:checked+.slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+
+        .back-button {
+            position: fixed;
+            top: 100px;
+            left: 10px;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            color:  var(--Text-Main-Color);
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            background-color: var(--Primary-Color);
+            box-shadow: var(--box360);
+        }
+
+        .back-button:hover {
+            transform: translateY(2px);
+        }
+
+        .back-button i {
+            margin-right: 8px;
+        }
+
+ select {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 10px 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.01));
+    border: 1px solid var(--Hover-Primary-Color);
+    border-radius: 7px;
+    color: var(--Text-Main-Color);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.5s ease;
+    box-shadow: inset 0 0 100px var(--Hover-Primary-Color), var(--box360);
+    backdrop-filter: blur(15px);
+    position: relative;
+    text-align: center;
+}
+
+select::after {
+    content: '\25BC'; 
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--Text-Main-Color);
+}
+
+select:hover {
+    box-shadow: inset 0 0 100px var(--Hover-Secondary-Color), var(--box360);
+    border: 1px solid var(--Hover-Secondary-Color);
+}
+
+select:focus {
+    border: 1px solid var(--Button-Hover-Primary-Color);
+    box-shadow: inset 0 0 100px var(--Button-Hover-Primary-Color), var(--box360);
+}
+
+select option {
+    background-color: var(--Secondary-Color); 
+    color: var(--Text-Main-Color);
+}
+
+select option:hover {
+    background-color: var(--Button-Hover-Secondary-Color); 
+}
+input[type="file"] {
+  display: none;
+}
+.file-upload {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 5px 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.01));
+    border: 1px solid var(--Hover-Primary-Color);
+    border-radius: 7px;
+    color: var(--Text-Main-Color);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.5s ease;
+    box-shadow: inset 0 0 100px var(--Hover-Primary-Color), var(--box360);
+    backdrop-filter: blur(15px);
+    position: relative;
+}
+
+.file-upload:hover {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 5px 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.01));
+    border: 1px solid var(--Hover-Secondary-Color);
+    border-radius: 7px;
+    color: var(--Text-Main-Color);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.5s ease;
+    box-shadow: inset 0 0 100px var(--Hover-Secondary-Color), var(--box360);
+    backdrop-filter: blur(15px);
+    position: relative;
+}
+</style>
+<body>
+    <nav id="nav"></nav>
+        <div class="container">
+            <div class="stgcontainer">
+                <div class="Settings-Card" id="setting">
+                    <h1 style="color: white;" id="paneltxt">Settings</h1>
+                    <button class="clrbtn" id="panelbutton1" onclick="switchcontent()">Customization</button>
+                    <button class="clrbtn" id="panelbutton2" onclick="switchcontent2()">Proxy</button>
+                </div>
+                <div class="content1" style="display: none;" id="panel">
+                    <h1 style="color:white; text-align: center;" id="customtxt">Customization</h1>
+                    <div class="Settings-layout">
+                        <div class="Settings-Card" id="customization">
+                            <h1 id="setColors">Set Colors</h1>
+                            <h2 id="customizationDescription">This is where you can add a lot of customization in how the colors of the proxy look. WARNING: will reset preset theme</h2>
+
+                            <div class="clrholder">
+                                <label for="background-color" class="clstxt" id="backgroundColor">
+                                    Background Color<br><input id="bc" class="clrs-select" type="color">
+                                </label>
+                                <label for="navbar-color" class="clstxt" id="navbarColor">
+                                    Navbar Color<br><input id="navc" class="clrs-select" type="color">
+                                </label>
+                                <label for="hover-primary-color" class="clstxt" id="hoverPrimaryColor">
+                                    Hover Primary Color<br><input id="set" class="clrs-select" type="color">
+                                </label>
+                                <label for="hover-secondary-color" class="clstxt" id="hoverSecondaryColor">
+                                    Hover Secondary Color<br><input id="hsc" class="clrs-select" type="color">
+                                </label>
+                            </div>
+                            <button class="clrbtn" id="cfmbtn" onclick="confirm1()">Confirm</button>
+                            <button class="clrbtn" id="rstbtn" onclick="reset1()">Reset</button>
+                        </div>
+                        <div class="Settings-Card" id="customization">
+                            <h1 id="setColorsb">Box Colors</h1>
+                            <h2 id="customizationDescriptionb">This is where you can change the colors on the box.</h2>
+
+                            <div class="clrholder">
+                                <label for="background-color" class="clstxt" id="backgroundColorb">
+                                    Color 1<br><input id="1" class="clrs-select" type="color">
+                                </label>
+                                <label for="navbar-color" class="clstxt" id="navbarColorb">
+                                    Color 2<br><input id="2" class="clrs-select" type="color">
+                                </label>
+                                <label for="hover-primary-color" class="clstxt" id="hoverPrimaryColorb">
+                                    Color 3<br><input id="3" class="clrs-select" type="color">
+                                </label>
+                                <label for="hover-secondary-color" class="clstxt" id="hoverSecondaryColorb">
+                                    Color 4<br><input id="4" class="clrs-select" type="color">
+                                </label>
+                                <label for="hover-secondary-color" class="clstxt" id="hoverSecondaryColorbb">
+                                    Color 5<br><input id="5" class="clrs-select" type="color">
+                                </label>
+                                <label for="hover-secondary-color" class="clstxt" id="hoverSecondaryColorrbb">
+                                    Color 6<br><input id="6" class="clrs-select" type="color">
+                                </label>
+                            </div>
+                            <button class="clrbtn" id="cfmbtn2" onclick="confirm3()" id="confirm">Confirm</button>
+                            <button class="clrbtn" id="rstbtn2" onclick="reset3()" id="reset">Reset</button>
+                        </div>
+                        <div class="Settings-Card" id="customization">
+                            <h1 id="customization2">Customization 2</h1>
+                            <h2 id="textColorDescription">Change the color of the text that shows on the proxy.</h2>
+                            <label for="textcolor" class="clstxt" id="textColor">Text Color<br><input id="txt" class="clrs-select"
+                                     type="color">
+                            </label>
+                            <button class="clrbtn" id="cfmbtn3" onclick="confirm()" id="confirm">Confirm</button>
+                            <button class="clrbtn" id="rstbtn3" id="reset" onclick="reset2()">Reset</button>
+                        </div>
+
+                        <div class="Settings-Card" id="customization">
+                            <h1 id="themes">Themes</h1>
+                            <h2 id="themesDescription">Select one of the pre-made color themes made by the team. WARNING: will reset custom theme</h2>
+                            <button class="clrbtn" id="clrbtnt1" onclick="themeGray()" id="darkBg">Dark</button>
+                            <button class="clrbtn" id="clrbtnt2" onclick="themeBlue()" id="blueBg">Blue</button>
+                            <button class="clrbtn" id="clrbtnt3" onclick="themeRed()" id="redBg">Red</button>
+                            <button class="clrbtn" id="clrbtnt4" onclick="themePurple()" id="purpleBg">Purple</button>
+                            <button class="clrbtn" id="clrbtnt5" onclick="themePink()" id="whiteBg">Pink</button>
+                            <button class="clrbtn" id="clrbtnt6" onclick="themeWhite()" id="whiteBg">White</button>
+                        </div>
+                        <div class="Settings-Card" id="customization">
+                            <h1 id="backgroundImage">Background Image</h1>
+                            <h2 id="backgroundImageDescription">This is where you can have your theme with the pre-made background.</h2>
+                            <button class="clrbtn" id="clrbtnb1" onclick="bjgray()" id="darkBg">Dark</button>
+                            <button class="clrbtn" id="clrbtnb2" onclick="bjblue()" id="blueBg">Blue</button>
+                            <button class="clrbtn" id="clrbtnb3" onclick="bjred()" id="redBg">Red</button>
+                            <button class="clrbtn" id="clrbtnb4" onclick="bjpurple()" id="purpleBg">Purple</button>
+                            <button class="clrbtn" id="clrbtnb5" onclick="bjpink()" id="pinkBg">Pink</button>
+                            <button class="clrbtn" id="clrbtnb6" onclick="bjwhite()" id="whiteBg">White</button>
+                            <button class="clrbtn" id="clrbtnb7" onclick="customBackground()" id="customBg">Custom</button>
+                        </div>
+                        <div class="Settings-Card" id="customization">
+                            <h1 id="languageSelector">language Selector</h1>
+                            <h2 id="languageSelectorDescription">Pick what language you what the proxy to be in.</h2>
+                                <button class="clrbtn" onclick="en()">English</button>
+                                <button class="clrbtn" onclick="es()">Spanish</button>
+                                <button class="clrbtn" onclick="fr()">French</button>
+                                <button class="clrbtn" onclick="pt()">portuguese</button>
+                                <button class="clrbtn" onclick="jp()">japanese</button>
+                        </div>
+                    </div>
+       
+                    <a onclick="switchcontent3()" class="back-button">
+                        <i class="fas fa-arrow-left"></i> <span id="back">Back</span>
+                    </a>
+                </div>
+                <div class="switchcontent2" style="display:none;" id="panel1">
+                    <h1 style="color:white; text-align: center;" id="proxy">Proxy</h1>
+                    <div class="Settings-layout">
+                        <div class="Settings-Card" id="customization">
+                            <h1 id="cloakTab">Cloak Tab</h1>
+                            <h2 id="cloakDescription">Cloak the proxy to hide it from the tab and history.</h2>
+                            <button class="clrbtn" id="Cloakbtn" onclick="cloak()">Cloak Me!</button>
+                        </div>
+                        <div class="Settings-Card" id="customization">
+                            <h1 id="setPanicHotkey">Set Panic Hotkey</h1>
+                            <h2 id="panicDescription">Set a hotkey to quickly switch pages.</h2>
+                            <button class="clrbtn" onclick="panic()" id="setPanicHotkey">Record Key</button>
+                        </div>
+                        <div class="Settings-Card" id="customization">
+                            <h1 id="searchEngine">Search Engine</h1>
+                            <h2 id="searchEngineDescription">Pick the preferred search engine to use when proxying a website.</h2>
+                            <button class="clrbtn" id="Cloakbtng" onclick="google()" id="google">Google</button>
+                            <button class="clrbtn" id="Cloakbtngg" onclick="bing()" id="bing">Bing</button>
+                            <button class="clrbtn" id="Cloakbtnggg" onclick="ddg()" id="ddg">Duck Duck Go</button>
+                            <button class="clrbtn" id="Cloakbtngggg" onclick="brave()" id="brave">Brave</button>
+
+                        </div>
+                        <div class="Settings-Card" id="customization">
+                            <h1 id="toggleTabs">Toggle Tabs</h1>
+                            <h2 id="toggleTabsDescription">Change if when you proxy its in tabbed mode or not.</h2>
+                            <label class="switch" id="Stgtxt">
+                                <input type="checkbox" id="tabscheck" onclick="tabbs()">
+                                <span class="slider"></span>
+                            </label>
+                            </label>
+                        </div>
+                        <div class="Settings-Card" id="customization">
+                            <h1 id="logintxt">Toggle Login Screen</h1>
+                            <h2 id="logintxt1">Skip the login screen.</h2>
+                            <label class="switch" id="Stgtxt">
+                                <input type="checkbox" id="logincheck" onclick="login()">
+                                <span class="slider"></span>
+                            </label>
+                            </label>
+                        </div>
+                        <div class="Settings-Card" id="customization">
+                            <h1 id="Settingstxti">Import Or Export</h1>
+                            <h2 id="Settingstxti1">Import Or Export settings. [Does NOT Export Personal Data] it can be shared.</h2>
+                            <label class="file-upload">
+                                <input type="file" id="file" name="import" placeholder="import">
+                                Import
+                            </label>
+                            <button class="clrbtn" onclick="exportSettings()" id="Settingstxti3">Export</button>
+                        </div>
+                    </div>
+                    <a onclick="switchcontent3()" class="back-button">
+                        <i class="fas fa-arrow-left"></i> <span id="back">Back</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="customContextMenu" style="display: none;">
+        <ul class="menuItems">
+            <li class="items"><a onclick="eruda.init();">Inspect Element</a></li>
+        </ul>
+    </div>
+    <script>
+        addEventListener("DOMContentLoaded", (event) => {
+            if (tabs === 'on') {
+                document.getElementById('id').checked = 'true'
+                console.log("loaded setting!")
+            }
+            else {
+                console.log("loaded setting!")
+            };
+
+    const one = document.getElementById('1').value;
+    const two = document.getElementById('2').value;
+    const three = document.getElementById('3').value;
+    const four = document.getElementById('4').value;
+    const five = document.getElementById('5').value;
+    const six = document.getElementById('6').value;
+    one = localStorage.getItem('boxc')
+    two = localStorage.getItem('boxcc')
+    three = localStorage.getItem('boxccc')
+    four = localStorage.getItem('boxcccc')
+    five = localStorage.getItem('boxccccc')
+    six = localStorage.getItem('boxcccccc')
+        });
+    </script>
+    <script>
+        let keys = {};
+
+        document.addEventListener('keydown', (event) => {
+            keys[event.key] = true;
+        });
+
+        if (keys['d'] && keys['i'] && keys['n'] && keys['g'] && keys['u'] && keys['s']) {
+            localStorage.setItem("theme", "dingus")
+            document.body.style.backgroundImage = "url('/backgrounds/dingus.png')";
+            document.body.setAttribute('data-theme', 'dingus');
+            console.log(`DINGUS`)
+        }
+    </script>
+</body>
+
+</html>

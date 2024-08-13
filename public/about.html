@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TutorSync | About</title>
+    <link rel="shortcut icon" href="photos/favicon.ico">
+     <!-- Google tag (gtag.js) -->
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWD8SS29YZ"></script>
+     <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag() { dataLayer.push(arguments); }
+         gtag('js', new Date());
+ 
+         gtag('config', 'G-PWD8SS29YZ');
+     </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html,
+        body {
+            display: grid;
+            height: 100%;
+            width: 100%;
+            place-items: center;
+            background: #ffffff;
+        }
+
+        ::selection {
+            background: #4158d0;
+            color: #fff;
+        }
+
+       .logingnav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            background: #193254;
+            padding: 20px;
+            border-bottom: 3px solid rgb(23, 23, 23);
+            z-index: 2;
+            margin-bottom: 20px;
+        }
+
+        #nav a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px; 
+        }
+        .logingnav a {
+            transition: transform 0.5s ease, background-color 0.5s ease;
+        }
+
+        .logingnav a:hover {
+            background: #408cff;
+        }
+
+        #header {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 35px;
+            margin-top: 60px;
+            font-weight: 600;
+            line-height: 100px;
+            color: #ffffff;
+            border-radius: 15px 15px 0 0;
+            background: linear-gradient(-135deg, #210c64, #9faffd);
+            padding: 20px;
+            user-select: none;
+            border-radius: 10px;
+        }
+
+        #content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        #content h2 {
+            color: #210c64;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #content p {
+            color: #262626;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        #footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #193254;
+        }
+
+        .footer-menu {
+            width: 100%;
+            background-color: #193254;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: fixed;
+            bottom: 0;
+        }
+
+        .footer-menu h3 {
+            color: rgb(255, 255, 255);
+            margin-bottom: 10px;
+        }
+
+        .menu-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu-section ul li a {
+            text-decoration: none;
+            color: #ccc;
+            font-size: 14px;
+            line-height: 2;
+            display: block;
+        }
+
+        .menu-section ul li a:hover {
+            color: #1a76ff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logingnav">
+        <div id="nav">
+            <a href="index.html">Login</a>
+            <a href="about.html">About</a>
+            <a href="newsletter.html">Newsletter</a>
+        </div>
+    </div>
+
+    <div id="header">
+        <h1>About TutorSync</h1>
+    </div>
+
+    <div id="content">
+        <div id="mission">
+            <h2>Our Mission</h2>
+            <p>TutorSync is committed to providing accessible and high-quality tutoring services to students worldwide.
+                We believe in empowering both learners and educators to achieve their full potential.</p>
+        </div>
+        <div id="team">
+            <h2>Our Team</h2>
+            <p>At TutorSync, we have a team of dedicated professionals who are passionate about education and
+                technology. Our team includes experienced tutors, developers, and designers who work together to create
+                the best possible learning experience for
+                our users.</p>
+        </div>
+        <div id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or feedback, please don't hesitate to get in touch with us. You can reach us
+                via email at info@tutorsync.com or through our contact form.</p>
+        </div>
+    </div>
+
+    <div id="footer">
+        <p>&copy; 2024 TutorSync. All rights reserved.</p>
+    </div>
+</body>
+
+</html>

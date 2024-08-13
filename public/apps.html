@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apps</title>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-PWD8SS29YZ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-PWD8SS29YZ");
+    </script>
+  </head>
+
+  <body onload="load()">
+    <style>
+      * {
+        transition: all 0.5s;
+      }
+
+      h5 {
+        font-family: Poppins;
+        font-size: 1.7em;
+        margin: 0;
+        color: white;
+      }
+
+      .Gbox1 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        padding: 1em;
+        margin-top: 5%;
+      }
+
+      .Gcontainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        padding: 1em;
+        outline: 1px solid var(--Primary-Color);
+        width: 20em;
+        height: 10em;
+        border-radius: 15px;
+        color: var(--Text-Main-Color);
+        box-shadow: var(--box360);
+        transition: cubic-bezier(0.1, 0.7, 1, 0.1);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .Gcontainer h5,
+      .Gcontainer {
+        position: relative;
+        z-index: 1;
+      }
+      .Gcontainer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 15px;
+        z-index: 0;
+      }
+
+      .pn {
+        background-color: rgba(0, 0, 0, 0.486);
+        outline: 1px solid var(--Primary-Color);
+        border-radius: 15px;
+        padding: 0.7em;
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+        position: absolute;
+        bottom: 1em;
+        right: 1em;
+        color: var(--Text-Main-Color);
+      }
+
+      button {
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+      }
+
+      .Gcontainer:hover {
+        outline: 1px solid var(--Hover-Secondary-Color);
+        box-shadow: inset 0 0 20px rgba(150, 150, 150, 0.4);
+        transform: translateY(-5px);
+        transition: 0.5s;
+      }
+
+      .pn:hover {
+        outline: 1px solid var(--Hover-Primary-Color);
+        box-shadow: inset 0 0 20px rgba(150, 150, 150, 0.4);
+        transition: 0.5s;
+      }
+    </style>
+    <nav id="nav"></nav>
+
+    <div id="content">
+      <div class="Gbox1" id="Gbox1" onload="loada()"></div>
+    </div>
+    <script src="uv/uv.bundle.js" defer></script>
+    <script src="uv/uv.config.js" defer></script>
+    <script src="./js/a.js" defer></script>
+  </body>
+</html>
