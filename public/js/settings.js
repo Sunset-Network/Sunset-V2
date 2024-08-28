@@ -70,41 +70,90 @@ const form = document.getElementById('backgroundForm');
         settingpanel1.style.display = 'none'
         mainpanel.style.display = 'block'
     }
+    function switchcontent3() {
+        const settingpanel1 = document.getElementById('panel');
+        const mainpanel = document.getElementById('setting');
+        settingpanel1.style.display = 'none'
+        mainpanel.style.display = 'block'
+        }
+
+        function switchcontent4() {
+            const settingpanel1 = document.getElementById('setting');
+        const mainpanel = document.getElementById('panel1');
+        settingpanel1.style.display = 'block'
+        mainpanel.style.display = 'none'
+        }
     //themes
     function themeBlue() {
         localStorage.setItem('theme', 'blue')
         document.body.style.backgroundImage = "url('/backgrounds/BasicBlue.webp')";
         document.body.classList.remove('red', 'purple', 'light', 'pink')
         document.body.classList.add('blue')
+        localStorage.setItem('boxc', '#0011ff')
+        localStorage.setItem('boxcc', '#4558e8')
+        localStorage.setItem('boxccc', '#121ca5')
+        localStorage.setItem('boxcccc', '#1c68ba')
+        localStorage.setItem('boxccccc', '#188ea5')
+        localStorage.setItem('boxcccccc', '#00fbff')
     }
     function themeGray() {
         localStorage.setItem('theme', '')
         document.body.style.backgroundImage = "url('/backgrounds/BasicGray.webp')";
         document.body.classList.remove('red', 'purple', 'light', 'pink', 'blue')
+        localStorage.setItem('boxc', '#ff9d00')
+        localStorage.setItem('boxcc', '#ffff00')
+        localStorage.setItem('boxccc', '#fbff2c')
+        localStorage.setItem('boxcccc', '#00ffffd2')
+        localStorage.setItem('boxccccc', '#3565a9')
+        localStorage.setItem('boxcccccc', '#458796')
     }
     function themeWhite() {
         localStorage.setItem('theme', 'light')
         document.body.style.backgroundImage = "url('/backgrounds/light-sunset.webp')";
         document.body.classList.remove('red', 'purple', 'blue', 'pink')
         document.body.classList.add('light')
+        localStorage.setItem('boxc', '#ffffff')
+        localStorage.setItem('boxcc', '#b8b8b8')
+        localStorage.setItem('boxccc', '#949494')
+        localStorage.setItem('boxcccc', '#575757')
+        localStorage.setItem('boxccccc', '#424242')
+        localStorage.setItem('boxcccccc', '#000000')
     }
     function themeRed() {
         localStorage.setItem('theme', 'red')
         document.body.style.backgroundImage = "url('/backgrounds/BasicRed-01.webp')";
         document.body.classList.remove('blue', 'purple', 'light', 'pink')
         document.body.classList.add('red')
+        localStorage.setItem('boxc', '#d52538')
+        localStorage.setItem('boxcc', '#a21c2a')
+        localStorage.setItem('boxccc', '#ff2b33')
+        localStorage.setItem('boxcccc', '#cc2228')
+        localStorage.setItem('boxccccc', '#99191d')
+        localStorage.setItem('boxcccccc', '#ff2929')
     }
     function themePurple() {
         localStorage.setItem('theme', 'purple')
         document.body.style.backgroundImage = "url('/backgrounds/BasicPurple-01.webp')";
         document.body.classList.remove('red', 'blue', 'light', 'pink')
         document.body.classList.add('purple')
+        localStorage.setItem('boxc', '#ad5eff')
+        localStorage.setItem('boxcc', '#8a4bcc')
+        localStorage.setItem('boxccc', '#562e7f')
+        localStorage.setItem('boxcccc', '#f65aff')
+        localStorage.setItem('boxccccc', '#d65aff')
+        localStorage.setItem('boxcccccc', '#e05aff')
     }
     function themePink() {
         localStorage.setItem('theme', 'pink')
         document.body.style.backgroundImage = "url('/backgrounds/BasicPink-01.webp')";
         document.body.classList.remove('red', 'blue', 'light', 'purple')
         document.body.classList.add('pink')
+        localStorage.setItem('boxc', '#ff9d00')
+        localStorage.setItem('boxcc', '#ffff00')
+        localStorage.setItem('boxccc', '#fbff2c')
+        localStorage.setItem('boxcccc', '#00ffffd2')
+        localStorage.setItem('boxccccc', '#3565a9')
+        localStorage.setItem('boxcccccc', '#458796')
     }
     function customBackground() {
         var url = prompt('What is the Background URL?');
@@ -169,16 +218,8 @@ const form = document.getElementById('backgroundForm');
         localStorage.removeItem('boxcccccc')
         location.reload();
     }
-    function confirm() {
-        const textSelector = document.getElementById('txt');
-        localStorage.setItem('txt', textSelector.value);
-        location.reload()
-    }
-    function reset2() {
-        localStorage.removeItem('txt');
-        location.reload()
-    }
     function confirm1() {
+        const textSelector = document.getElementById('txt');
         const backgroundSelector = document.getElementById('bc');
         const navbarSelector = document.getElementById('navc');
         const primarySelector = document.getElementById('set');
@@ -187,28 +228,28 @@ const form = document.getElementById('backgroundForm');
         }else {
         localStorage.setItem('bc', backgroundSelector.value);
         localStorage.removeItem('theme') 
-        location.reload();
         };
         if(navbarSelector.value === "#000000") {
         }else {
         localStorage.setItem('nav', navbarSelector.value); 
         localStorage.removeItem('theme') 
-        location.reload();
         };
         if(primarySelector === "#000000") {
         }else {
         localStorage.setItem('pr', primarySelector.value); 
         localStorage.removeItem('theme') 
-        location.reload();
         };
         if(secondarySelector === "#000000") {
         }else {
         localStorage.setItem('se', secondarySelector.value); 
         localStorage.removeItem('theme') 
-        location.reload();
         };
+        if(textSelector === '#000000') {
+        }else {
+        localStorage.setItem('txt', textSelector.value);  
+        }
+        location.reload();
         confirm3()
-        confirm()
     }
 
     async function exportSettings() {
@@ -293,20 +334,17 @@ const form = document.getElementById('backgroundForm');
     };
 
     function panic() {
-        function handleKeyDown(event) {
-            alert('this is that key you pressed i think dont quote me on that', event.key);
-            localStorage.setItem('key', event.key);
-            document.removeEventListener('keydown', handleKeyDown);
+            const panicForm = document.getElementById('panicForm')
+            localStorage.setItem('key', panicForm.value);
             location.reload()
-          }
-          document.addEventListener('keydown', handleKeyDown);
     }
 
     function reset1() {
-        localStorage.removeItem('bc')
-        localStorage.removeItem('nav')
-        localStorage.removeItem('pr')
-        localStorage.removeItem('se')
+        localStorage.removeItem('bc');
+        localStorage.removeItem('nav');
+        localStorage.removeItem('pr');
+        localStorage.removeItem('se');
+        localStorage.removeItem('txt');
         location.reload()
     }
     //meow thats the end :3

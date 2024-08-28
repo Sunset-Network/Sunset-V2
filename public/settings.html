@@ -297,6 +297,31 @@ input[type="file"] {
     backdrop-filter: blur(15px);
     position: relative;
 }
+
+#panicForm {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 5px 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.01));
+    border: 1px solid var(--Hover-Primary-Color);
+    border-radius: 7px;
+    color: var(--Text-Main-Color);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.5s ease;
+    box-shadow: inset 0 0 100px var(--Hover-Primary-Color), var(--box360);
+    backdrop-filter: blur(15px);
+    position: relative;
+}
+
+#panicForm:hover {
+    border: 1px solid var(--Hover-Secondary-Color);
+    box-shadow: inset 0 0 100px var(--Hover-Secondary-Color), var(--box360);
+}
 </style>
 <body>
     <nav id="nav"></nav>
@@ -327,6 +352,9 @@ input[type="file"] {
                                 <label for="hover-secondary-color" class="clstxt" id="hoverSecondaryColor">
                                     Hover Secondary Color<br><input id="hsc" class="clrs-select" type="color">
                                 </label>
+                                <label for="textcolor" class="clstxt" id="textColor">Text Color<br><input id="txt" class="clrs-select"
+                                    type="color">
+                           </label>
                             </div>
                             <button class="clrbtn" id="cfmbtn" onclick="confirm1()">Confirm</button>
                             <button class="clrbtn" id="rstbtn" onclick="reset1()">Reset</button>
@@ -358,16 +386,6 @@ input[type="file"] {
                             <button class="clrbtn" id="cfmbtn2" onclick="confirm3()" id="confirm">Confirm</button>
                             <button class="clrbtn" id="rstbtn2" onclick="reset3()" id="reset">Reset</button>
                         </div>
-                        <div class="Settings-Card" id="customization">
-                            <h1 id="customization2">Customization 2</h1>
-                            <h2 id="textColorDescription">Change the color of the text that shows on the proxy.</h2>
-                            <label for="textcolor" class="clstxt" id="textColor">Text Color<br><input id="txt" class="clrs-select"
-                                     type="color">
-                            </label>
-                            <button class="clrbtn" id="cfmbtn3" onclick="confirm()" id="confirm">Confirm</button>
-                            <button class="clrbtn" id="rstbtn3" id="reset" onclick="reset2()">Reset</button>
-                        </div>
-
                         <div class="Settings-Card" id="customization">
                             <h1 id="themes">Themes</h1>
                             <h2 id="themesDescription">Select one of the pre-made color themes made by the team. WARNING: will reset custom theme</h2>
@@ -415,8 +433,11 @@ input[type="file"] {
                         <div class="Settings-Card" id="customization">
                             <h1 id="setPanicHotkey">Set Panic Hotkey</h1>
                             <h2 id="panicDescription">Set a hotkey to quickly switch pages.</h2>
-                            <button class="clrbtn" onclick="panic()" id="setPanicHotkey">Record Key</button>
+                            <input type="text" id="panicForm" class="panicform" placeholder="Please click and press panic key">
+                            <input type="text" id="panicForm" class="panicform" placeholder="Insert the rediect link">
+                            <button class="clrbtn" onclick="panic()" id="setPanicHotkey">Save</button>
                         </div>
+
                         <div class="Settings-Card" id="customization">
                             <h1 id="searchEngine">Search Engine</h1>
                             <h2 id="searchEngineDescription">Pick the preferred search engine to use when proxying a website.</h2>
@@ -454,7 +475,7 @@ input[type="file"] {
                             <button class="clrbtn" onclick="exportSettings()" id="Settingstxti3">Export</button>
                         </div>
                     </div>
-                    <a onclick="switchcontent3()" class="back-button">
+                    <a onclick="switchcontent4()" class="back-button">
                         <i class="fas fa-arrow-left"></i> <span id="back">Back</span>
                     </a>
                 </div>

@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const input = document.getElementById("uv-address")
   const onTabs = localStorage.getItem('onTabs')
+  const tabs = localStorage.getItem('tabs')
   input.addEventListener("keydown", handleInput)
 
   function handleInput(e) {
@@ -12,10 +13,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const query = formatSearch(input.value)
 
       //Check if the user is using tabs
-      if(onTabs === 'true'){
+      if(onTabs === 'true') {
+      localStorage.setItem('url', __uv$config.prefix + __uv$config.encodeUrl(query) )
+      window.location.href = 'g.html'
+      }else {
+      if(tabs === 'enabled'){
         //if the user is using tabs
         //default to basic searching
-        window.location.href = __uv$config.prefix + __uv$config.encodeUrl(query) 
+        
+        localStorage.setItem('taburl', __uv$config.prefix + __uv$config.encodeUrl(query) )
+        window.location.href = 'inde.html'
       }else {
       //if the user is not using tabs 
       // Set LocalStorage to [uv prefix] + [encoded search query]
@@ -23,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = 'g.html'
       }
     }
+  }
 
 function formatSearch(query) {
   const engine = localStorage.getItem('enginee')
@@ -35,7 +43,7 @@ function formatSearch(query) {
   } catch (e) { }
 
   try {
-    const url = new URL(`https://${query}`)
+    const url = new URL(`http://${query}`)
     if (url.hostname.includes('.')) return url.toString()
   } catch (e) { }
 
