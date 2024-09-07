@@ -1,3 +1,8 @@
+//lets do a rundown of ts stuff
+//we make the navbar and set the marker
+//when the navbar a element is selected we take the page content of the href
+//we then replace the div with the id content with the content from the page allowing it to stay in one html file
+//smart stuff ig
 document.addEventListener("DOMContentLoaded", function () {
   var nav = `
     <div class="testnav" id="nav2">
@@ -29,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       items.forEach(function (item) {
         item.addEventListener("click", function (event) {
-          event.preventDefault(); // Prevent default page refresh
+          event.preventDefault(); 
 
           items.forEach(function (link) {
             link.classList.remove("selected");
@@ -124,10 +129,11 @@ async function loadroadmaplang() {
     </h1>`;
 }
 
-//3 am gang
 //yes yes yes and if your wondering IT COULDVE BEEN SIMPLER
 //but my dumbass mind thought this would be the only solution (its not :sob:)
 //smh
+
+//might redo this later
 async function loadsettinglang() {
   const panel = document.getElementById("paneltxt");
   const panelbutton1 = document.getElementById("panelbutton1");
@@ -227,51 +233,3 @@ async function loadsettinglang() {
     `${data["backgroundColor"]} <br><input id="bc" class="clrs-select" type="color">`;
 }
 
-function filesupload() {
-  const file = document.getElementById("file");
-  file.addEventListener("change", handleFiles, false);
-  function handleFiles(event) {
-    const fileList = event.target.files;
-    const uploadedFile = fileList[0];
-
-    if (!uploadedFile) {
-      console.log("No file selected.");
-      return;
-    }
-
-    const reader = new FileReader();
-
-    reader.onload = function (event) {
-      const fileContent = event.target.result;
-      try {
-        const data = JSON.parse(fileContent);
-
-        localStorage.setItem("boxc", data["Box Color 1"]);
-        localStorage.setItem("boxcc", data["Box Color 2"]);
-        localStorage.setItem("boxccc", data["Box Color 3"]);
-        localStorage.setItem("boxcccc", data["Box Color 4"]);
-        localStorage.setItem("boxccccc", data["Box Color 5"]);
-        localStorage.setItem("boxcccccc", data["Box Color 6"]);
-        localStorage.setItem("bc", data["BG"]);
-        localStorage.setItem("nav", data["nav"]);
-        localStorage.setItem("pr", data["pr"]);
-        localStorage.setItem("se", data["se"]);
-        localStorage.setItem("theme", data["Theme"]);
-        localStorage.setItem("background", data["Background"]);
-        localStorage.setItem("txt", data["Text-Color"]);
-        localStorage.setItem("enginee", data["Search-Engine"]);
-        localStorage.setItem("selectedLang", data["Language"]);
-        localStorage.setItem("hotkey", data["Panic"]);
-        localStorage.setItem("tabs", data["Tabs"]);
-        localStorage.setItem("login", data["Login"]);
-
-        location.reload();
-
-        console.log("File content:", fileContent);
-      } catch (error) {
-        console.error("Error parsing JSON:", error);
-      }
-    };
-    reader.readAsText(uploadedFile);
-  }
-}

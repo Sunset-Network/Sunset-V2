@@ -1,5 +1,5 @@
-//Made With ChatGPT by Amplify
-
+//note
+//i stole the backedn from sunset v1
 import express from 'express';
 import http from 'node:http';
 import cors from 'cors';
@@ -11,6 +11,7 @@ const server = http.createServer();
 const app = express(server);
 const __dirname = process.cwd();
 const PORT = 8080;
+//bear server
 const bare = createBareServer("/bare/");
 
 app.use(express.json());
@@ -20,7 +21,7 @@ app.use(cors());
 
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(process.cwd(), '/index.html'));
+    res.sendFile(path.join(process.cwd(), '/public/index.html'));
 });
 
 server.on("request", (req, res) => {
@@ -55,7 +56,7 @@ server.on('listening', () => {
 
 server.listen({ port: PORT, })
 
-// https://expressjs.com/en/advanced/healthcheck-graceful-shutdown.html
+// SIGMA SHUTDOWN
 process.on("SIGINT", shutdown);
 process.on("SIGTERM", shutdown);
 

@@ -219,24 +219,20 @@ self.__uv$config = {
       console.log('stop it get some help')
     }
   
-    // fix amps vencord thingy
+    // dont inject discord 
     if (url.host === 'd.com') {
-            //insert vencord script
+            //who thought this was a good idea
       return `
-  <script src="https://raw.githubusercontent.com/Vencord/builds/main/browser.js"></script>
-  <link rel="stylesheet" href="https://raw.githubusercontent.com/Vencord/builds/main/browser.css">
           `;
     } else {
-      //insert vencord script
+      //bro what
       // dingus is hot (told me to add this) LMAOOOOO real tho
       return `
-  <script src="https://raw.githubusercontent.com/Vencord/builds/main/browser.js"></script>
-  <link rel="stylesheet" href="https://raw.githubusercontent.com/Vencord/builds/main/browser.css">
       `;
     }
   },
 
-// amps middleware
+// amps middleware just relized its not amps lmfao
 
   /**
    * Middleware function for handling requests.

@@ -1,5 +1,4 @@
-//WARNING: before you go looking through the code just know
-//most of this went of the basis of "if it aint broke dont fix it"
+//removed the note because silvereen got mad at me :sob:
 
 //i know me or someone else in the future and wonder what the fuck this mess was lmfao
 
@@ -148,12 +147,12 @@ const form = document.getElementById('backgroundForm');
         document.body.style.backgroundImage = "url('/backgrounds/BasicPink-01.webp')";
         document.body.classList.remove('red', 'blue', 'light', 'purple')
         document.body.classList.add('pink')
-        localStorage.setItem('boxc', '#ff9d00')
-        localStorage.setItem('boxcc', '#ffff00')
-        localStorage.setItem('boxccc', '#fbff2c')
-        localStorage.setItem('boxcccc', '#00ffffd2')
-        localStorage.setItem('boxccccc', '#3565a9')
-        localStorage.setItem('boxcccccc', '#458796')
+        localStorage.setItem('boxc', '#a92d7a')
+        localStorage.setItem('boxcc', '#c5378f')
+        localStorage.setItem('boxccc', '#5c2246')
+        localStorage.setItem('boxcccc', '#d62c95')
+        localStorage.setItem('boxccccc', '#e03fa2')
+        localStorage.setItem('boxcccccc', '#ff4fbb')
     }
     function customBackground() {
         var url = prompt('What is the Background URL?');
@@ -250,46 +249,6 @@ const form = document.getElementById('backgroundForm');
         }
         location.reload();
         confirm3()
-    }
-
-    async function exportSettings() {
-        //export the users settings
-
-        var exportJSON = {
-            //box colors
-            "Box Color 1" : [color1],
-            "Box Color 2" : [color2],
-            "Box Color 3" : [color3],
-            "Box Color 4" : [color4],
-            "Box Color 5" : [color5],
-            "Box Color 6" : [color6],
-            //customized themes
-            "BG" : [bc],
-            "nav" : [nav],
-            "pr": [pr],
-            "se": [se],
-            //themes
-            "Theme": [theme],
-            "Background": [background],
-            "Text-color": [textColor],
-            //prccy setting
-            "Search-engine": [engine],
-            "Language": [selectedLang],
-            "Panic": [hotkey],
-            "Tabs": [tabs],
-            "Login": []
-        };
-
-        //stringify 
-        var stringifyJSON = JSON.stringify(exportJSON);
-
-        //create a picker
-        const picker = await window.showSaveFilePicker();
-        //make a writable
-        const writable = await picker.createWritable();
-        //write and close
-        await writable.write(stringifyJSON);
-        await writable.close();
     }
 
     function login() {

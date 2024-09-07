@@ -84,6 +84,46 @@
   }
 }
 
+.pink {
+  --Primary-Color: rgb(167, 47, 157);
+  --Secondary-Color: #e93295;
+  --Navbar-Color: #eb4da1;
+  --Background-Color: #e93295;
+  --Hover-Primary-Color: #db4398;
+  --Hover-Secondary-Color: #a92d7a;
+  --Game-Hover-Color: #db4398;
+  --Button-Hover-Primary-Color: #db4398;
+  --Button-Hover-Secondary-Color: #a92d7a;
+  --Text-Main-Color: #ffffff;
+  --Text-Secondary-Color: #404040;
+  background-image: url("./backgrounds/BasicPink-01.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  .box::before {
+    background: repeating-conic-gradient(
+      from var(--a),
+      #a92d7a,
+      #c5378f,
+      #5c2246,
+      #d62c95,
+      #e03fa2,
+      #ff4fbb
+    );
+  }
+  .box::after {
+    background: repeating-conic-gradient(
+      from var(--a),
+      #a92d7a,
+      #c5378f,
+      #5c2246,
+      #d62c95,
+      #e03fa2,
+      #ff4fbb
+    );
+  }
+}
+
 .purple {
   --Primary-Color: #800080;
   --Secondary-Color: #660066;
