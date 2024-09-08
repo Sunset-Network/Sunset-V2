@@ -1,7 +1,6 @@
-//WARNING: before you go looking through the code just know
-//most of this went of the basis of "if it aint broke dont fix it"
+//removed the note because silvereen got mad at me :sob:
 
-//also to note that the notes in here are nobodycares or the hamster guy talking not chatgpt lmfao were not amplify here.
+//removed another note because silvereen got mad at me :sob:
 //defining go brr
 const stockSW = "/uv/sw.js";
 const swAllowedHostnames = ["localhost", "127.0.0.1"];
