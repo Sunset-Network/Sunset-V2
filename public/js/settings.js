@@ -186,6 +186,7 @@ const form = document.getElementById('backgroundForm');
         const ta = localStorage.getItem('tabs')
         if(ta === 'enabled') {
             localStorage.removeItem('tabs')
+            localStorage.removeItem('onTabs')
             window.location.href = '/main.html'
         }else {
         localStorage.setItem('tabs','enabled')

@@ -1,5 +1,5 @@
-let username = "sunset"; // edit txt in "" to change username
-let password = "test"; // edit txt in "" to change password
+let username = "school"; // edit txt in "" to change username
+let password = "sucks"; // edit txt in "" to change password
 
 document.getElementById("submitbtn").onclick = function(event){
     event.preventDefault(); // Prevent the default form submission action

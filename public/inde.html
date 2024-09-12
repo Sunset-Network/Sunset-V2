@@ -440,15 +440,13 @@
       <i id="refresh-btn" class="fa-solid fa-rotate-right fa-xl" style="color: #ffffff; animation: fadeIn 1s;"></i>
       <i id="redo" onclick="history.forward()" class="fa-solid fa-arrow-right fa-xl actnbtn" style="color: #ffffff; animation: fadeIn 1s;"></i>
     </div>
-    <form class="search-form" id="uv-form">
       <div class="search-container">
         <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
         <input id="uv-search-engine" value="" type="hidden" />
         <input id="uv-address" type="text" style="color: #ffffff;" placeholder="Enter a URL or Search"
           class="search-input" />
       </div>
-      <button id="enterbtn" type="submit">Go</button>
-    </form>
+      <button id="enterbtn" type="submit" onclick="uvstuff();">Go</button>
 
     <div class="right-icons">
       <i id="popout-btn" class="fa-solid fa-arrow-up-right-from-square fa-xl" style="color: #ffffff; animation: fadeIn 1s;"></i>
@@ -505,6 +503,8 @@
   <script src="./js/index.js" defer></script>
 
   <script>
+    const frame = document.getElementById('uv-frame')
+    const taburl = localStorage.getItem('taburl')
     addEventListener("DOMContentLoaded", (event) => {
         const tabs = localStorage.getItem('tabs')
         if (tabs === 'off') {
@@ -512,8 +512,10 @@
             console.log(`redirecting`)
         }
         else {
-            console.log(`owo tabs on`)
-        }
+            console.log(`Tabs On`)
+            frame.src = taburl;
+        };
+        localStorage.setItem('onTabs', 'true');
     });
   </script>
   <script>
@@ -527,7 +529,6 @@
     const mainIframe = document.getElementById("uv-frame");
     const favoriteBtn = document.getElementById("favorite-btn");
     const favoritesBar = document.getElementById("favorites-bar");
-    const taburl = localStorage.getItem('taburl')
     let activeTab;
     let activeIframe = mainIframe;
     const contentw = activeIframe.contentWindow
@@ -584,6 +585,24 @@
 
       activateTab(tab, url);
     }
+
+    function formatSearch(query) {
+    const engine = localStorage.getItem("engine");
+    if (engine === null) {
+      localStorage.setItem("enginee", "https://www.google.com/search?q=");
+    }
+
+    try {
+      return new URL(query).toString();
+    } catch (e) {}
+
+    try {
+      const url = new URL(`https://${query}`);
+      if (url.hostname.includes(".")) return url.toString();
+    } catch (e) {}
+
+    return new URL(engine + `${query}`).toString();
+  }
 
     function activateTab(tab, url) {
       if (activeTab) {
@@ -737,8 +756,7 @@
 
 
     document.addEventListener("DOMContentLoaded", function () {
-      mainIframe.src = taburl
-      localStorage.setItem('onTabs', 'true')
+      mainIframe.src = taburl;
       const questionBtn = document.getElementById("question-btn");
       const sideWidget = document.getElementById("side-widget");
       questionBtn.addEventListener("click", function () {
@@ -753,9 +771,9 @@
     });
 
     function uvstuff(){
-      let url = search(document.getElementById("uv-address").value)
-      let encodedUrl = swConfigSettings.prefix + crypts.encode(url);
-      contentw.location.href = encodedUrl;
+      let url = document.getElementById("uv-address").value
+      const query = __uv$config.prefix + __uv$config.encodeUrl(formatSearch(url));
+      contentw.location.href =  query;
     };
     document.getElementById("uv-address").addEventListener("input", function () {
       contentw.postMessage("value" + document.getElementById("uv-address").value, '*');
