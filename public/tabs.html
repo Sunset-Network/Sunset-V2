@@ -11,18 +11,19 @@
   <meta name="theme-color" content="#fff500">
   <meta name="description" content="i dont really know what to put here so ig uhh sunet network cool - nobodycares" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="twitter:image" content="https://github.com/Sunset-Network/Sunset-Network/blob/main/public/Icons/logo.png?raw=true">
+  <meta name="twitter:image"
+    content="https://github.com/Sunset-Network/Sunset-Network/blob/main/public/Icons/logo.png?raw=true">
   <script src="https://kit.fontawesome.com/fcaf79e23b.js" crossorigin="anonymous"></script>
-   <!-- Google tag (gtag.js) -->
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWD8SS29YZ"></script>
-   <script>
-       window.dataLayer = window.dataLayer || [];
-       function gtag() { dataLayer.push(arguments); }
-       gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWD8SS29YZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-       gtag('config', 'G-PWD8SS29YZ');
-   </script>
-   
+    gtag('config', 'G-PWD8SS29YZ');
+  </script>
+
   <title>Sunset Network</title>
   <style>
     body {
@@ -427,7 +428,6 @@
       margin-left: 20px;
       font-size: x-large;
     }
-
   </style>
 </head>
 
@@ -435,11 +435,16 @@
 
   <div class="search-bar">
     <div class="left-icons">
-      <i id="home" onclick="home()" class="fa-solid fa-house fa-xl actnbtn" style="color: #ffffff; animation: fadeIn 1s;"></i>
-      <i id="undo" onclick="history.back()" class="fa-solid fa-arrow-left fa-xl actnbtn" style="color: #ffffff; animation: fadeIn 1s;"></i>
+      <i id="home" onclick="home()" class="fa-solid fa-house fa-xl actnbtn"
+        style="color: #ffffff; animation: fadeIn 1s;"></i>
+      <i id="undo" onclick="history.back()" class="fa-solid fa-arrow-left fa-xl actnbtn"
+        style="color: #ffffff; animation: fadeIn 1s;"></i>
       <i id="refresh-btn" class="fa-solid fa-rotate-right fa-xl" style="color: #ffffff; animation: fadeIn 1s;"></i>
-      <i id="redo" onclick="history.forward()" class="fa-solid fa-arrow-right fa-xl actnbtn" style="color: #ffffff; animation: fadeIn 1s;"></i>
+      <i id="redo" onclick="history.forward()" class="fa-solid fa-arrow-right fa-xl actnbtn"
+        style="color: #ffffff; animation: fadeIn 1s;"></i>
     </div>
+
+    <form class="search-form" id="uv-form">
       <div class="search-container">
         <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
         <input id="uv-search-engine" value="" type="hidden" />
@@ -447,12 +452,16 @@
           class="search-input" />
       </div>
       <button id="enterbtn" type="submit" onclick="uvstuff();">Go</button>
+    </form>
 
     <div class="right-icons">
-      <i id="popout-btn" class="fa-solid fa-arrow-up-right-from-square fa-xl" style="color: #ffffff; animation: fadeIn 1s;"></i>
+      <i id="popout-btn" class="fa-solid fa-arrow-up-right-from-square fa-xl"
+        style="color: #ffffff; animation: fadeIn 1s;"></i>
       <i id="fullscreen" class="fa-solid fa-expand fa-xl" style="color: #ffffff; animation: fadeIn 1s;"></i>
-      <i id="actnbtn"  onclick="eruda.init();" class="fa-solid fa-code fa-xl actnbtn" style="color: #ffffff; animation: fadeIn 1s;"></i>
-      <i id="question-btn" class="fa-solid fa-question fa-xl" style="color: #ffffff; cursor: pointer; animation: fadeIn 1s;"></i>
+      <i id="actnbtn" onclick="eruda.init();" class="fa-solid fa-code fa-xl actnbtn"
+        style="color: #ffffff; animation: fadeIn 1s;"></i>
+      <i id="question-btn" class="fa-solid fa-question fa-xl"
+        style="color: #ffffff; cursor: pointer; animation: fadeIn 1s;"></i>
 
     </div>
   </div>
@@ -479,12 +488,12 @@
 
     </div>
   </div>
-  
-  <div id = "customContextMenu" style = "display: none;">
-    <ul class = "menuItems">
-    <li class = "items"><a onclick="eruda.init();">Inspect Element</a></li>
+
+  <div id="customContextMenu" style="display: none;">
+    <ul class="menuItems">
+      <li class="items"><a onclick="eruda.init();">Inspect Element</a></li>
     </ul>
-    </div>
+  </div>
 
   <div id="tabs">
     <button id="plus" class="tab-button add-tab-button">+</button>
@@ -500,34 +509,34 @@
   </div>
   <script src="/uv/uv.bundle.js" defer></script>
   <script src="/uv/uv.config.js" defer></script>
-  <script src="./js/index.js" defer></script>
+  <!-- <script src="./js/index.js" defer></script> -->
 
   <script>
     const frame = document.getElementById('uv-frame')
     const taburl = localStorage.getItem('taburl')
     addEventListener("DOMContentLoaded", (event) => {
-        const tabs = localStorage.getItem('tabs')
-        if (tabs === 'off') {
-            top.location.replace('/main.html')
-            console.log(`redirecting`)
-        }
-        else {
-            console.log(`Tabs On`)
-            frame.src = taburl;
-        };
-        localStorage.setItem('onTabs', 'true');
+      const tabs = localStorage.getItem('tabs')
+      if (tabs === 'off') {
+        top.location.replace('/tabs-home.html')
+        console.log(`redirecting`)
+      }
+      else {
+        console.log(`Tabs On`)
+        frame.src = taburl;
+      };
+      localStorage.setItem('onTabs', 'true');
     });
   </script>
   <script>
     function home() {
-        createTab()
+      createTab()
     }
   </script>
   <script>
     const tabs = document.getElementById("tabs");
     const plus = document.getElementById("plus");
     const mainIframe = document.getElementById("uv-frame");
-    const favoriteBtn = document.getElementById("favorite-btn");
+    // const favoriteBtn = document.getElementById("favorite-btn");
     const favoritesBar = document.getElementById("favorites-bar");
     let activeTab;
     let activeIframe = mainIframe;
@@ -535,10 +544,10 @@
     let tabidnum = 0
 
 
-    function createTab(url = "/main.html", name = "Sunset Network", faviconUrl = "logo.png") {
+    function createTab(url = "/tabs-home.html", name = "Sunset Network", faviconUrl = "logo.png") {
       const tab = document.createElement("button");
       tab.classList.add("tab-button");
-      tabidnum ++
+      tabidnum++
       let tabid = "tab-" + tabidnum
       tab.id = tabid
       localStorage.removeItem(tabid);
@@ -561,7 +570,7 @@
 
       tabs.insertBefore(tab, plus);
       tab.addEventListener("click", function () {
-        if(localStorage.getItem(tab.id) != null)
+        if (localStorage.getItem(tab.id) != null)
           url = localStorage.getItem(tab.id)
         activateTab(tab, url);
       });
@@ -587,22 +596,22 @@
     }
 
     function formatSearch(query) {
-    const engine = localStorage.getItem("engine");
-    if (engine === null) {
-      localStorage.setItem("enginee", "https://www.google.com/search?q=");
+      const engine = localStorage.getItem("engine");
+      if (engine === null) {
+        localStorage.setItem("enginee", "https://www.google.com/search?q=");
+      }
+
+      try {
+        return new URL(query).toString();
+      } catch (e) { }
+
+      try {
+        const url = new URL(`https://${query}`);
+        if (url.hostname.includes(".")) return url.toString();
+      } catch (e) { }
+
+      return new URL(engine + `${query}`).toString();
     }
-
-    try {
-      return new URL(query).toString();
-    } catch (e) {}
-
-    try {
-      const url = new URL(`https://${query}`);
-      if (url.hostname.includes(".")) return url.toString();
-    } catch (e) {}
-
-    return new URL(engine + `${query}`).toString();
-  }
 
     function activateTab(tab, url) {
       if (activeTab) {
@@ -664,14 +673,14 @@
       saveFavorites(updatedFavorites);
     }
 
-    favoriteBtn.addEventListener("click", () => {
-      if (activeTab) {
-        const url = contentw.location.href;
-        const name = activeTab.querySelector(".tab-name").textContent;
-        const faviconUrl = activeTab.querySelector(".favicon").src;
-        addFavorite(url, name, faviconUrl);
-      }
-    });
+    // favoriteBtn.addEventListener("click", () => {
+    //   if (activeTab) {
+    //     const url = contentw.location.href;
+    //     const name = activeTab.querySelector(".tab-name").textContent;
+    //     const faviconUrl = activeTab.querySelector(".favicon").src;
+    //     addFavorite(url, name, faviconUrl);
+    //   }
+    // });
 
     document.addEventListener("DOMContentLoaded", loadFavorites);
 
@@ -770,10 +779,10 @@
       }
     });
 
-    function uvstuff(){
+    function uvstuff() {
       let url = document.getElementById("uv-address").value
       const query = __uv$config.prefix + __uv$config.encodeUrl(formatSearch(url));
-      contentw.location.href =  query;
+      contentw.location.href = query;
     };
     document.getElementById("uv-address").addEventListener("input", function () {
       contentw.postMessage("value" + document.getElementById("uv-address").value, '*');
@@ -786,25 +795,25 @@
       uvstuff()
     });
     document.getElementById("home").addEventListener("click", function () {
-      contentw.location.href = "/index.html"
+      contentw.location.href = "/tabs-home.html"
     })
 
     activeIframe.addEventListener("load", function () {
       let url = contentw.location.href;
       let path = contentw.location.pathname;
-      if(path.includes("/uv/service/")){
-        path = path.substring(12);
+      if (path.includes("/uv/service/sunet/")) {
+        path = path.substring(18);
         document.getElementById("uv-address").value = __uv$config.decodeUrl(path);
       }
-      else if(path.includes("/index.html")){
+      else if (path.includes("/index.html")) {
         document.getElementById("uv-address").value = ""
       };
 
-      if(contentw.document.querySelector('link[rel*="icon"]')){
+      if (contentw.document.querySelector('link[rel*="icon"]')) {
         activeTab.querySelector(".favicon").src = contentw.document.querySelector('link[rel*="icon"]').href
       }
-      else{
-        activeTab.querySelector(".favicon").src = "default-favicon.png"
+      else {
+        activeTab.querySelector(".favicon").src = "/logo.png"
       }
       activeTab.querySelector(".tab-name").textContent = contentw.document.title;
       localStorage.setItem(activeTab.id, url);
