@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const query = formatSearch(input.value)
 
       //Check if the user is using tabs
-      if(onTabs === 'true' && top.location.href.includes('/inde.html')) {
+      if(onTabs === 'true' && top.location.href.includes('/tabs.html')) {
         console.log('ontabs')
       localStorage.setItem('url', __uv$config.prefix + __uv$config.encodeUrl(query) )
       window.location.href = 'g.html'
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('tabs enabled')
         
         localStorage.setItem('taburl', __uv$config.prefix + __uv$config.encodeUrl(query) )
-        window.location.href = 'inde.html'
+        window.location.href = 'tabs.html'
       }else {
       //if the user is not using tabs 
       console.log('no tabs')

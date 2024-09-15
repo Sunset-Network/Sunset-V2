@@ -194,7 +194,7 @@ self.__uv$config = {
    * @returns {string} The script to inject.
    */
   inject: (url) => {
-    console.log(url.host);
+    // console.log(url.host);
     // only fans better vist onlyfans.com/blanky
     if (url.host === 'pornhub.com') {
       top.location.replace('/loserwatchingpornnotblanky.html')
@@ -243,7 +243,7 @@ self.__uv$config = {
   middleware: (request) => {
     const url = new URL(request.url);
 
-    console.log(url.host);
+    // console.log(url.host);
     if (blocked.includes(url.host)) {
       return new Response(null, {});
     }
