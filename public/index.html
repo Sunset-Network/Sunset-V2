@@ -1,127 +1,80 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TutorSync | Login</title>
-    <link rel="stylesheet" type="text/css" href="Login/style.css"/>
-    <script src="Login/index.js" defer></script>
-    <script src="login.js" defer></script> 
-    <style>
-        .pxe {
-            text-align: center;
-            border: 1px solid #193254;
-            padding: 20px;
-            position: static;
-            top: 50%; 
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .footer-menu {
-            background-color: #193254;
-            padding: 20px 0;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        
-        .footer-menu h3 {
-            color: rgb(255, 255, 255);
-        }
-
-        .footer-menu ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .footer-menu ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-menu a {
-            color: rgb(255, 255, 255);
-            text-decoration: none;
-        }
-    </style>
+    <title>Sunset Network</title>
+    <link rel="stylesheet" type="text/css" id="styless" href="./MAIN.css">
+    <!-- Scripts -->
+    <script src="./js/navbar.js" defer></script>
+    <script src="/js/search.js" defer></script>
+    <link rel="shortcut icon" href="./logo.png" type="image/png">
+    <!--Meta Tags-->
+    <meta name="title" content="Sunset Network" />
+    <meta name="theme-color" content="#fff500">
+    <meta name="description" content="Great site to learn alot, and focus on your studies and be a gay femboy :3" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="twitter:image" content="https://github.com/Sunset-Network/Sunset-Network/blob/main/public/Icons/logo.png?raw=true">
+    <!--Google Symbols-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+     <!-- Google tag (gtag.js) -->
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWD8SS29YZ"></script>
+     <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag() { dataLayer.push(arguments); }
+         gtag('js', new Date());
+ 
+         gtag('config', 'G-PWD8SS29YZ');
+     </script>
 </head>
- <!-- Google tag (gtag.js) -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWD8SS29YZ"></script>
- <script>
-     window.dataLayer = window.dataLayer || [];
-     function gtag() { dataLayer.push(arguments); }
-     gtag('js', new Date());
-
-     gtag('config', 'G-PWD8SS29YZ');
- </script>
 <body>
-
-    <div class="logingnav">
-        <div id="nav">
-            <a style="padding: 0px 0px 10px;" href="/">Login</a></button>
-            <a href="Login/about.html">About</a></button>
-            <a href="Login/newsletter.html">Newsletter</a></button>
-            <a href="Login/register.html">Register</a></button>
+    <nav id="nav"></nav>
+    <div id="content">
+        <div class="container">
+            <div class="SN-txt">
+                <h1 class="fronttext" id="fronttext" style="animation: fadeIn 1s;">
+                    Sunset-Network
+            </div>
+            <div class="box" id="box" style="animation: fadeIn 1s;"><span></span>
+                    <input class="hvr-bounce-in" id="uv-search-engine" value=""
+                        type="hidden" />
+                    <input class="proxy" id="uv-address" type="text" placeholder="Enter a URL or Search"
+                        style="color: white;" onsubmit="console.log(document.getElementById('uv-address').value)"/>  <div class="desc left-margin">
+                            <p id="uv-error"></p>
+                            <pre id="uv-error-code"></pre>
+                        </div>
+                        <div class="desc left-margin">
+                        </div>
+            </div>
+            <!--LCP-->
+            <div class="abt-txt" id="abt-txt">
+                <p style="animation: fadeIn 1s;">
+                   Experience the future of internet browsing with Sunset Network your secure and private web proxy
+                    solution.
+                    <br id="abt-txt1"> With advanced ad blocking, and lightning-fast speeds, browse the web with
+                    confidence
+                    and
+                    ease. <br id="abt-txt2"> Try Sunset Network today for a seamless online experience like never before!
+                </p>
+            </div>
         </div>
-    </div>
-    <div class="wrapper">
-        <div class="title">
-           Login
-        </div>
-        <form id="loginForm" action="#">
-           <div class="field">
-              <input type="text" id="usernameinpt" id="usernameinpt1" required>
-              <label>Username</label>
-           </div>
-           <div class="field">
-              <input type="password" id="passwordinpt" id="passwordinpt1"required>
-              <label>Password</label>
-           </div>
-           <div class="content">
-              <div class="checkbox">
-                 <input type="checkbox" id="remember-me">
-                 <label for="remember-me">Remember me</label>
-              </div>
-              <div class="pass-link">
-                 <a href="#">Forgot password?</a>
-              </div>
-           </div>
-           <div class="field">
-              <input type="submit" value="Login" id="submitbtn">
-           </div>
-           <div class="signup-link">
-              Not a member? <a href="Login/register.html">Signup now</a>
-           </div>
-        </form>
-    </div>
-
-    <div class="footer-menu" id="footerMenu">
-        <div class="menu-section">
-            <h3>LEARN</h3>
-            <ul>
-                <li><a href="#">Help</a></li>
-                <li><a href="#">In Print</a></li>
-                <li><a href="#">Word of the Year 2023</a></li>
-            </ul>
-        </div>
-        <div class="menu-section">
-            <h3>DEVELOP</h3>
-            <ul>
-                <li><a href="#">Dictionary API</a></li>
-                <li><a href="#">Search Widgets</a></li>
-                <li><a href="#">License Data</a></li>
+        <div id = "customContextMenu" style = "display: none;">
+            <ul class = "menuItems">
+            <li class = "items"><a onclick="eruda.init();">Inspect Element</a></li>
             </ul>
         </div>
     </div>
-    <script>
-        if(localStorage.getItem('skipLogin') === 'true') {
-            window.location.href = '/main.html'
-        }
-    </script>
+</div>
 </body>
-
+<!--More Scripts-->
+<script src="uv/uv.bundle.js" defer></script>
+<script src="uv/uv.config.js" defer></script>
+<script src="./js/a.js" defer></script>
+<script src="./js/load.js"></script>
+<script src="./js/settings.js"></script>
+<script src="./js/locales.js"></script>
+<script async="async" data-cfasync="false" src="//pl24188018.cpmrevenuegate.com/4c3b174de1f32d1d655dad21e0e30080/invoke.js"></script>
+<script type='text/javascript' src='//pl24162504.cpmrevenuegate.com/e0/03/33/e003331f0222fbf4fbc7898eb4908e7c.js'></script>
 </html>

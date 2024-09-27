@@ -6,7 +6,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   var nav = `
     <div class="testnav" id="nav2">
-    <a href="/main.html" class="selected" id="home" onclick="location.reload()">Home</a>
+    <a href="/index.html" class="selected" id="home" onclick="location.reload()">Home</a>
     <a href="/apps.html" id="apps" onclick="setTimeout(function() { loada(); }, 100);">Apps</a>
     <a href="/discord.html"id="disc" >Discord</a>
     <a href="/roadmap.html" id="roadMap" onclick="setTimeout(function() { loadroadmaplang() }, 100);">Road Map</a>
